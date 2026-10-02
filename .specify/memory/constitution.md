@@ -1,50 +1,43 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: Unversioned -> 1.0.0
+- Added 8 Core Principles based on user specifications.
+- Removed unused template sections 2 and 3.
+- Populated Governance details and Dates.
+-->
+# Planejador BNCC Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Especificação Antes do Código (Spec-First)
+Comportamentos e critérios de aceitação DEVEM ser especificados antes da escrita de código. A geração de código sem especificação prévia e aprovação é estritamente proibida.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Separação de Arquitetura e Segurança
+DEVE-SE manter uma separação clara entre frontend, API e integrações externas. Segredos, chaves de API e credenciais DEVEM residir exclusivamente no backend.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Autenticação e Autorização Estrita
+DEVE-SE autenticar os professores. A aplicação DEVE garantir que cada usuário tenha acesso autorizado unicamente aos seus próprios planos de aula, prevenindo vazamento de dados.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Rascunhos de IA (Human-in-the-Loop)
+A saída de qualquer modelo de Inteligência Artificial DEVE ser tratada como um rascunho editável, estando sempre sujeita à revisão, modificação e aprovação docente final.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Validação e Atomicidade
+Entradas de usuários e respostas de integrações externas DEVEM ser validadas. Em caso de falha durante a geração ou processamento, a operação não deve resultar em planos parciais ou corrompidos.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### VI. Persistência e Reprodutibilidade
+Os dados DEVEM ser persistidos utilizando "migrations" estruturadas e rotinas de "seed" reprodutíveis para garantir consistência entre ambientes.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### VII. Consistência de UI/UX e Acessibilidade
+O desenvolvimento DEVE usar componentes e tokens coerentes com o Design System do Figma. A aplicação DEVE garantir acessibilidade e ser totalmente responsiva (desktop, tablet e celular).
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### VIII. Testes, Documentação e Artefatos
+Comportamentos críticos DEVEM ser testados e a execução DEVE ser documentada. Artefatos de projeto devem ser versionados; arquivos `.env` ou credenciais NUNCA devem ser versionados.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- Esta Constituição atua como a lei primária do projeto Planejador BNCC.
+- Todas as revisões de código (PRs) e agentes automatizados DEVEM verificar e garantir o cumprimento estrito destes princípios.
+- Alterações nestes princípios exigem atualização da versão do documento e uma justificativa clara.
+- Quebras nos princípios de segurança (como o versionamento de segredos) bloqueiam imediatamente qualquer aprovação ou integração de código.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-10-01 | **Last Amended**: 2026-10-01
